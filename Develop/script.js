@@ -19,7 +19,7 @@ function writePassword() {
     if(upLets===null){
       return;
     }
-    if(upLets!="Y" && upLets!="N"){
+    if(upLets!="Y" && upLets!="N" && upLets!="y" && upLets!="n"){
     alert("Invalid answer. Please enter Y or N.")
     return;
   }
@@ -27,7 +27,7 @@ function writePassword() {
   if(downLets===null){
     return;
   }
-  if(downLets!="Y" && downLets!="N"){
+  if(downLets!="Y" && downLets!="N" && downLets!="y" && downLets!="n"){
     alert("Invalid answer. Please enter Y or N.")
     return;
   }
@@ -35,7 +35,7 @@ function writePassword() {
   if(specs===null){
     return;
   }
-  if(specs!="Y" && specs!="N"){
+  if(specs!="Y" && specs!="N" && specs!="y" && specs!="n"){
     alert("Invalid answer. Please enter Y or N.")
     return;
   }
@@ -43,12 +43,12 @@ function writePassword() {
   if(nums===null){
     return;
   }
-  if(nums!="Y" && nums!="N"){
+  if(nums!="Y" && nums!="N" && nums!="y" && nums!="n"){
     alert("Invalid answer. Please enter Y or N.")
     return;
   }
-  if(upLets==="N" && downLets==="N" && specs==="N" && nums==="N"){
-    alert("Invalid. Your password must contain characters.")
+  if((upLets==="N" || upLets==="n") && (downLets==="N" || downLets==="n") && (specs==="N" || specs==="n") && (nums==="N" || nums==="n")){
+    alert("Invalid request. Your password must contain characters.")
     return;
   }
 
@@ -70,16 +70,16 @@ function writePassword() {
   }
 
   var options = [];
-  if(upLets==="Y"){
+  if(upLets==="Y" || upLets==="y"){
     options.push(upLetters);
   }
-  if(downLets==="Y"){
+  if(downLets==="Y" || downLets==="y"){
     options.push(downLetters);
   }
-  if(specs==="Y"){
+  if(specs==="Y" || specs==="y"){
     options.push(specials);
   }
-  if(nums==="Y"){
+  if(nums==="Y" || nums==="y"){
     options.push(numbers);
   }
 

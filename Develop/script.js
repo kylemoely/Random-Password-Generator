@@ -7,6 +7,11 @@ var numbers = "0123456789"
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// var prp = prompt("Enter")
+// for(x=0;x<prp.length;x++){
+//   console.log(numbers.includes(prp[x]))
+// }
+
 
 // Write password to the #password input
 function writePassword() {
@@ -46,13 +51,19 @@ function writePassword() {
     alert("Invalid. Your password must contain characters.")
     return;
   }
+
+  var numbers = "0123456789";
+
   var passLength = prompt("How many characters would you like the password to be (Minimum: 8, Maximum: 128)?")
   if(passLength===null){
     return;
   }
-  // if(typeof passLength!="number"){
-  //   alert("Invalid answer. Please enter a number.")
-  //   return;
+  for(x=0;x<passLength.length;x++){
+    if(numbers.includes(passLength[x])===false){
+      alert("Invalid answer. Please enter a number.")
+      return;
+    }
+  }
   if(passLength>128||passLength<8){
     alert("Invalid answer. Password length must be between 8 and 128 characters.")
     return;
